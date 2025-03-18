@@ -18,10 +18,13 @@ saveButton.addEventListener('click', function (e) {
     console.log('nameSaved', nameSaved)
     nameArray.push(nameSaved)
 
-    sessionStorage.setItem("name",nameArray)
+    sessionStorage.setItem("name", JSON.stringify(nameArray));
     form.reset()
 })
-deleateButton.addEventListener('click', function (e) {
-    nameArray.pop()
-    sessionStorage.removeItem("name",nameArray)
-})
+
+deleateButton.addEventListener('click', function () {
+    if (nameArray.length > 0) {
+        nameArray.pop();
+        sessionStorage.removeItem("name")
+    }
+});
