@@ -23,5 +23,5 @@ saveButton.addEventListener('click', function (e) {
 })
 deleateButton.addEventListener('click', function (e) {
     nameArray.pop()
-    sessionStorage.removeItem("name")
+    sessionStorage.removeItem("name",nameArray)
 })
